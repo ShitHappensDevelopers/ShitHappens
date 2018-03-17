@@ -1,0 +1,74 @@
+/*body {
+	padding: 0;
+	margin: 20px;
+}
+*/
+
+.myTable {
+	display: table;
+	width: 100%;	
+}
+.myTableCell {
+	display: table-cell;
+}
+.myField {
+	width: 20%;
+}
+.myContainer {
+	min-width: 900px;
+}
+
+
+.myHeader, .myContainer {	
+	box-sizing: border-box;
+}
+.myField > div, .myHeader {	
+	height: 50px;
+	background-color: #D1D1D1
+}
+.row {
+	margin: 0;
+}
+.row > div {
+	height: 50px;
+}
+
+.myIconsContainer{
+	text-align: left;
+	margin-top: 10px;
+}
+.myIconslink > span {
+	font-size: 25px;
+}
+.myTitle {
+	text-align: center;
+}
+.myTitle > h3 {
+	margin-top: 10px;
+	font-size: 22px;
+	font-weight: 600;
+}
+.myBtns {
+	text-align: right;
+}
+.myBtns > button {
+	font-size: 15px;
+	font-weight: 600;
+	margin: 5px 0 0 10px;
+}
+
+
+
+nav {
+	
+}
+
+
+
+
+/*.myContent {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	min-width: 900px;
+	box-sizing: border-box;
+}*/
