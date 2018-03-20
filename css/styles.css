@@ -1,0 +1,95 @@
+/*body {
+	padding: 0;
+	margin: 20px;
+}
+*/
+
+header {
+	box-sizing: border-box;
+	background-color: #D1D1D1;
+	height: 60px;
+}
+header > div {
+	height: 60px;
+	padding-top: 5px;
+}
+header > div, .myContainer {
+	width: 900px;
+	margin: auto;
+}
+
+.myIconsContainer{
+	text-align: left;
+	margin-top: 10px;
+}
+.myIconslink > span {
+	font-size: 25px;
+}
+.myTitle {
+	text-align: center;
+}
+.myTitle > h3 {
+	margin-top: 10px;
+	font-size: 22px;
+	font-weight: 600;
+}
+.myBtns {
+	text-align: right;
+}
+.myBtns > button {
+	font-size: 15px;
+	font-weight: 600;
+	margin: 5px 0 0 10px;
+}
+
+
+
+
+nav {
+	background-color: #ACA8A8
+}
+nav > ul {
+	text-align: center;
+	margin: 0;
+}
+nav > ul > li {
+	display: inline-block;
+	padding: 15px;
+}
+nav > ul > li > a {
+	color: white;
+	font-size: 15px;
+}
+nav > ul > li > a:hover {
+	text-decoration: none;
+	color: white;
+}
+nav > ul > li:hover {
+	background-color: #D52E2E;
+}
+
+
+
+.myContent {
+	border: 1px solid black;
+	height: 490px;
+}
+
+
+
+footer {
+	box-sizing: border-box;
+	height: 60px;
+	background-color: #817E7E;
+	color: white;	
+}
+footer > ul {
+	text-align: center;
+	font-size: 13px;
+	padding: 10px;
+	margin: 0;
+}
+footer > ul > li {
+	display: inline-block;
+	padding: 10px 30px;
+}
