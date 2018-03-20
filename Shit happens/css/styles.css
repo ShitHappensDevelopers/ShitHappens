@@ -4,33 +4,18 @@
 }
 */
 
-.myTable {
-	display: table;
-	width: 100%;	
-}
-.myTableCell {
-	display: table-cell;
-}
-.myField {
-	width: 20%;
-}
-.myContainer {
-	min-width: 900px;
-}
-
-
-.myHeader, .myContainer {	
+header {
 	box-sizing: border-box;
+	background-color: #D1D1D1;
+	height: 60px;
 }
-.myField > div, .myHeader {	
-	height: 50px;
-	background-color: #D1D1D1
+header > div {
+	height: 60px;
+	padding-top: 5px;
 }
-.row {
-	margin: 0;
-}
-.row > div {
-	height: 50px;
+header > div, .myContainer {
+	width: 900px;
+	margin: auto;
 }
 
 .myIconsContainer{
@@ -59,16 +44,52 @@
 
 
 
+
 nav {
-	
+	background-color: #ACA8A8
+}
+nav > ul {
+	text-align: center;
+	margin: 0;
+}
+nav > ul > li {
+	display: inline-block;
+	padding: 15px;
+}
+nav > ul > li > a {
+	color: white;
+	font-size: 15px;
+}
+nav > ul > li > a:hover {
+	text-decoration: none;
+	color: white;
+}
+nav > ul > li:hover {
+	background-color: #D52E2E;
 }
 
 
 
+.myContent {
+	border: 1px solid black;
+	height: 490px;
+}
 
-/*.myContent {
-	border-right: 1px solid black;
-	border-left: 1px solid black;
-	min-width: 900px;
+
+
+footer {
 	box-sizing: border-box;
-}*/
+	height: 60px;
+	background-color: #817E7E;
+	color: white;	
+}
+footer > ul {
+	text-align: center;
+	font-size: 13px;
+	padding: 10px;
+	margin: 0;
+}
+footer > ul > li {
+	display: inline-block;
+	padding: 10px 30px;
+}
