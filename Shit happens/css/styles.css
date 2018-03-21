@@ -88,8 +88,8 @@ nav > div > ul > li > a {
 nav > div > ul > li > a:hover {
 	border-bottom: 5px solid orange;
     text-decoration: none; 
-	color: white;
-	background-color: #D52E2E;
+	color:black;
+	/* background-color: #D52E2E; */
 }
 nav > ul > li > a:visited{
 	text-decoration: none;
