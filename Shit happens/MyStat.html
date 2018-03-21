@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jQuery/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="import" href="ShitHappens.html" id="ShitID">
+    <title>Document</title>
+</head>
+
+<body>
+    <table class="table">
+        <div class="myTable" id="superTable">
+            <tbody>
+                <tr>
+                    <td>Зарегестрирован с:</td>
+                    <td>16.05.2018</td>
+                </tr>
+                <tr>
+                    <td>Опубликовано историй:</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>К-во доступних историй:</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>К-во временных историй:</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </div>
+
+
+
+    </table>
+    <script>
+        function supportsImports() {
+            return 'import' in document.createElement('link');
+        }
+
+        if (supportsImports()) {
+            // Good to go!
+            var htmlImport = document.getElementById('ShitID').import;
+            var htmlClone = htmlImport.querySelector('body').cloneNode(true);
+
+            var test = htmlClone.querySelector('#myStat').appendChild(document.getElementById('superTable'));
+
+            document.body.appendChild(htmlClone);
+            document.getElementById('myStat').appendChild(document.getElementById('superTable').cloneNode(true));
+            /*var htmlContent = htmlClone.querySelector('.myStat').appendChild()*/
+
+        } else {
+            // Use other libraries/require systems to load files.
+            window.alert('Use other libraries/require systems to load files.')
+        }
+    </script>
+</body>
+
+</html>
