@@ -1,0 +1,49 @@
+
+.myContainer {
+	width: 950px;
+	margin: auto;
+}
+.myContent {
+	overflow: hidden;
+	min-height: 550px;
+}
+.myContent > div:first-child {
+	padding: 25px;
+	/*border-right: 1px solid #BCBCBC;*/
+}
+.myContent > div:nth-child(2) {
+	/*padding: 25px, 50px;*/
+} 
+
+.mySideMenu {
+	background-color: white;
+	font-size: 15px;
+	font-weight: bolder;
+	border: 1px solid #BCB6B6;
+	box-shadow: 0 3px 9px grey;
+	margin-bottom: 120px;
+}
+.mySideMenu > ul > li > a {
+	color: #3A3838;
+	padding: 15px 20px 15px; 
+}
+.myDayStat {
+	padding: 5px 5px 5px 10px;
+	margin: 120px 10px 50px;
+	border: 1px solid #BCB6B6;
+	background-color: white;
+	width: 160px;
+}
+
+.myWall {
+	padding: 25px 10px 25px 25px;
+}
+.myWall > div:first-child {
+	padding: 0 14px 0 10px;
+}
+.myWall button {
+	width: 100%;
+	font-size: 14px;
+	font-weight: bolder;
+	padding: 12px 15px;
+}

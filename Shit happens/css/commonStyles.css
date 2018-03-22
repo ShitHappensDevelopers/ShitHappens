@@ -1,0 +1,124 @@
+body {
+	background-color: #F7F6F6
+}
+
+
+header {
+	box-sizing: border-box;
+	background-color: #D6D6D6;
+	height: 60px;
+}
+header > div {
+	height: 60px;
+	padding-top: 5px;
+}
+header > div, nav > div {
+	width: 900px;
+	margin: auto;
+}
+
+.myIconsContainer{
+	text-align: left;
+	margin-top: 10px;
+}
+.myIconslink > span {
+	font-size: 25px;
+}
+.myTitle {
+	text-align: center;
+}
+.myTitle > h3 {
+	margin-top: 10px;
+	font-size: 22px;
+	font-weight: 600;
+}
+.myBtns {
+	text-align: right;
+}
+.myBtns > button {
+	font-size: 15px;
+	font-weight: 600;
+	margin: 5px 0 0 10px;
+}
+
+
+
+
+
+nav {
+	background-color: white;
+	margin-bottom: 30px;
+}
+nav > div > ul {
+	text-align: center;
+	margin: 0;
+	padding-left: 0;
+}
+nav > div > ul > li:first-child {
+	margin-right: 40px;
+	width: auto;
+	border: 0px;
+}
+nav > div > ul > li > .btn {
+	font-size: 18px;
+}
+nav > div > ul > li > .btn:hover {
+	border-bottom: 1px solid #CCCCCC;
+}
+#mySecondChild {
+	border-left: 1px solid #CCCCCC
+}
+nav a {
+	font-size: 30px;
+}
+nav > div > ul > li {
+	display: inline-block;
+	border-bottom: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	box-sizing: border-box;
+	width: 175px;
+}
+nav > div > ul > li > a {
+	color: black;
+	font-weight: bolder;
+	font-size: 15px;
+	padding: 10px 0 5px;
+	display: inline-block;
+	width: 100%;
+	transition: 0.5s;
+	border-bottom: 5px solid transparent;
+}
+nav > div > ul > li > a:hover {
+	border-bottom: 5px solid orange;
+    text-decoration: none; 
+	color:black;
+	/* background-color: #D52E2E; */
+}
+nav > ul > li > a:visited{
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+nav > ul > li:hover {
+	/* background-color: #D52E2E; */
+}
+
+
+
+
+
+footer {
+	box-sizing: border-box;
+	height: 60px;
+	background-color: #817E7E;
+	color: white;	
+}
+footer > ul {
+	text-align: center;
+	font-size: 13px;
+	padding: 10px;
+	margin: 0;
+}
+footer > ul > li {
+	display: inline-block;
+	padding: 10px 30px;
+}

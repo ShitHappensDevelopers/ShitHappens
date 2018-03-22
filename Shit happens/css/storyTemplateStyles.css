@@ -1,0 +1,60 @@
+
+.myStory {
+	border: 1px solid #727272;
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+.myStoryHeader, .myStoryFooter {
+	box-sizing: border-box;
+	overflow: auto;	
+	background-color: #D1D0D0;
+	border-radius: 20px 20px 0 0;
+	padding: 10px 15px;
+}
+.myStoryContent {
+	box-sizing: border-box;
+	background-color: white;
+	padding: 25px 40px 15px 50px;
+	font-size: 15px;
+}
+.myStoryFooter {
+	background-color: white;
+	border-radius: 0 0 20px 20px;
+	padding: 0 0 5px;
+}
+.myStoryFooter > div, .myStoryDate, .myStoryDuration {
+	font-size: 18px;
+	font-weight: bolder;
+	opacity: 0.95;
+}
+.myStoryFooter > div:first-child > span:first-child, .myStoryFooter > div:nth-child(3) > span:nth-child(2) {
+	font-size: 32px; 
+	transition: 0.2s;
+}
+.myStoryFooter > div:first-child > span:first-child:hover, .myStoryFooter > div:nth-child(3) > span:nth-child(2):hover {
+	color: #707070;
+}
+.myStoryLogin {
+	font-size: 16px;
+	font-weight: bolder;
+}
+.myStoryDate, .myStoryDuration {
+	font-size: 14px;
+}
+.myStoryDuration {
+	height: 100%;
+	vertical-align: bottom;
+	line-height: 100%;
+	display: inline-block;
+}
+.myStoryHeader > div:nth-child(3) {
+	padding: 5px;
+	font-size: 20px;
+	color: #515050;
+}
+.myStoryHeader > div:nth-child(3) > span{
+	transition: 0.3s;
+}
+.myStoryHeader > div:nth-child(3) > span:hover {
+	color: black;
+}
