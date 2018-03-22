@@ -13,7 +13,7 @@ header > div {
 	padding-top: 5px;
 }
 header > div, .myContainer, nav > div {
-	width: 900px;
+	width: 950px;
 	margin: auto;
 }
 
@@ -87,7 +87,7 @@ nav > div > ul > li > a {
 }
 nav > div > ul > li > a:hover {
 	border-bottom: 5px solid orange;
-    text-decoration: none; 
+    text-decoration: none;
 	color:black;
 	/* background-color: #D52E2E; */
 }
@@ -121,7 +121,7 @@ nav > ul > li:hover {
 }
 .mySideMenu > ul > li > a {
 	color: #3A3838;
-	padding: 15px 20px 15px; 
+	padding: 15px 20px 15px;
 }
 .myDayStat {
 	padding: 5px;
@@ -138,7 +138,7 @@ footer {
 	box-sizing: border-box;
 	height: 60px;
 	background-color: #817E7E;
-	color: white;	
+	color: white;
 }
 footer > ul {
 	text-align: center;

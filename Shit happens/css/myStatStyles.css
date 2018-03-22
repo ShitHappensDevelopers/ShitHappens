@@ -1,3 +1,29 @@
+.myStat {
+    background-color: white;
+    padding: 50px 40px 30px 40px;
+    /* box-shadow: 0 3px 9px grey; */
+    /* border: 1px solid black; */
+}
+
 table {
     font-size: 17px;
+    font-weight: bolder;
 }
+.myFingerUpDown {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+.myFingerUpDown > p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+p > span:first-child {
+    font-size: 35px;
+}
+/* .myFingerUpDown > ul {
+    list-style-type: none;
+}
+.myFingerUpDown > ul > li {
+    font-size: 16px;
+    font-weight: bolder;
+} */
