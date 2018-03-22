@@ -9,57 +9,71 @@
     <script src="bootstrap/bootstrap.min.js"></script>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <link rel="import" href="ShitHappens.html" id="ShitID">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/myStatStyles.css">
+    <title>My Stat</title>
 </head>
 
 <body>
-    <table class="table">
-        <div class="myTable" id="superTable">
-            <tbody>
-                <tr>
-                    <td>Зарегестрирован с:</td>
-                    <td>16.05.2018</td>
-                </tr>
-                <tr>
-                    <td>Опубликовано историй:</td>
-                    <td>24</td>
-                </tr>
-                <tr>
-                    <td>К-во доступних историй:</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>К-во временных историй:</td>
-                    <td>3</td>
-                </tr>
-            </tbody>
+    <link href="header.html" rel="import">
+    <link href="nav.html" rel="import">
+    <div>
+        <div class="myContainer">
+
+            <div class="myContent">
+                <div class="col-xs-3">
+                    <div class="mySideMenu">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Мои истории</a></li>
+                            <li><a href="#">Моя статистика</a></li>
+                            <li><a href="#">Мой профиль</a></li>
+                            <li><a href="#">Выход</a></li>
+                        </ul>
+                    </div>
+                    <div class="myDayStat">
+                        <h4>Дневная статистика</h4>
+                        <div>
+                            Сейчас на сайте: <br/> <span>X</span>
+                            <br/>
+                            <br/> Сегодня посетителей: <br/> <span>Y</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-9">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Зарегестрирован с:</td>
+                                <td>16.05.2018</td>
+                            </tr>
+                            <tr>
+                                <td>Опубликовано историй:</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>К-во доступних историй:</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>К-во временных историй:</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
+    </div>
 
-
-
-    </table>
-    <script>
-        function supportsImports() {
-            return 'import' in document.createElement('link');
-        }
-
-        if (supportsImports()) {
-            // Good to go!
-            var htmlImport = document.getElementById('ShitID').import;
-            var htmlClone = htmlImport.querySelector('body').cloneNode(true);
-
-            var test = htmlClone.querySelector('#myStat').appendChild(document.getElementById('superTable'));
-
-            document.body.appendChild(htmlClone);
-            document.getElementById('myStat').appendChild(document.getElementById('superTable').cloneNode(true));
-            /*var htmlContent = htmlClone.querySelector('.myStat').appendChild()*/
-
-        } else {
-            // Use other libraries/require systems to load files.
-            window.alert('Use other libraries/require systems to load files.')
-        }
-    </script>
+    <link href="footer.html" rel="import">
 </body>
+<!-- script for displaing imported documents in places where these imports was-->
+<script>
+    var parts = document.querySelectorAll("link[rel=import]");
+    Array.prototype.forEach.call(parts, function(element) {
+        element.parentElement.insertBefore(element.import.firstChild, element);
+    });
+</script>
 
 </html>

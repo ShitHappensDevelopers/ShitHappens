@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Пример страницы</title>
-		<script src="jQuery/jquery-3.3.1.min.js"></script>
-		<script src="bootstrap/bootstrap.min.js"></script>
-  		<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-		  <link href="css/styles.css" rel="stylesheet">
-	</head>
 
-	<body>	
-<link href="header.html" rel="import">
-<link href="nav.html" rel="import">
-		<div>
-			<div class="myContainer">
-				
-				<div class="myContent">
-					<div class="col-xs-3">
-						<div class="mySideMenu">
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Мои истории</a></li>
-								<li><a href="#">Моя статистика</a></li>
-								<li><a href="#">Мой профиль</a></li>
-								<li><a href="#">Выход</a></li>
-							</ul>
-						</div>
-						<div class="myDayStat" >
-							<h4>Дневная статистика</h4>
-							<div>
-								Сейчас на сайте: <br/> <span>X</span>
-								<br/>
-								<br/>
-								Сегодня посетителей: <br/> <span>Y</span>
-							</div>
-						</div>
+<head>
+	<meta charset="utf-8">
+	<title>Пример страницы</title>
+	<script src="jQuery/jquery-3.3.1.min.js"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<link href="header.html" rel="import">
+	<link href="nav.html" rel="import">
+	<div>
+		<div class="myContainer">
+
+			<div class="myContent">
+				<div class="col-xs-3">
+					<div class="mySideMenu">
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="#">Мои истории</a></li>
+							<li><a href="#">Моя статистика</a></li>
+							<li><a href="#">Мой профиль</a></li>
+							<li><a href="#">Выход</a></li>
+						</ul>
 					</div>
-
-					<div class="col-xs-9">
-
+					<div class="myDayStat">
+						<h4>Дневная статистика</h4>
+						<div>
+							Сейчас на сайте: <br/> <span>X</span>
+							<br/>
+							<br/> Сегодня посетителей: <br/> <span>Y</span>
+						</div>
 					</div>
 				</div>
 
-			</div>
-		</div>	
+				<div class="col-xs-9">
 
-	<link href="footer.html" rel="import">										
-	</body>
-	<!-- script for displaing imported documents in places where these imports was-->
-	<script>
-			var parts = document.querySelectorAll("link[rel=import]");
-			Array.prototype.forEach.call(parts, function(element) {
-				Array.prototype.forEach.call(element.import.childNodes, function(child) {
-				element.parentElement.insertBefore(child, element);
-					});
-				});
-		</script>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<link href="footer.html" rel="import">
+</body>
+<!-- script for displaing imported documents in places where these imports was-->
+<script>
+	var parts = document.querySelectorAll("link[rel=import]");
+	Array.prototype.forEach.call(parts, function(element) {
+		Array.prototype.forEach.call(element.import.childNodes, function(child) {
+			element.parentElement.insertBefore(child, element);
+		});
+	});
+</script>
+
 </html>
