@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Мой Профиль | Shitpappens</title>
+    <script src="jQuery/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/commonStyles.css">
+    <link rel="stylesheet" href="css/myMenu.css">
+    <link rel="stylesheet" href="css/myprofile.css">
+</head>
+
+<body>
+    <link href="header.html" rel="import">
+    <link href="nav.html" rel="import">
+    <div>
+        <div class="myContainer">
+            <div class="myContent">
+                <div class="col-xs-3 text-justify">
+                    <div class="mySideMenu">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-book"></span>&ensp; Мои истории</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-signal"></span>&ensp; Моя статистика</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-user"></span>&ensp; Мой профиль</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-off"></span>&ensp; Выход</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="myDayStat">
+                        <h4>Дневная статистика</h4>
+                        <div>
+                            Сейчас на сайте:
+                            <br/>
+                            <span>X</span>
+                            <br/>
+                            <br/> Сегодня посетителей:
+                            <br/>
+                            <span>Y</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="myprofilecontainer panel-group" id="myProfileContainerId">
+                        <div class="myField panel panel-default" id="panel1">
+                            <div class="myFieldHeader">
+                                <span>Эмейл:</span>
+                                <div class="myFieldEditBtnCon">
+                                    <button data-toggle="collapse" data-target="#myEmailEditId" data-parent="#myProfileContainerId">редактировать
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </div>
+                                <span>usermail1234@example.domaim.com</span>
+                            </div>
+                            <div class="collapse" id="myEmailEditId">
+                                <div class="myFieldEditForm">
+                                    <div class="myFieldEditFormCon">
+                                        <div class="myFieldInputCon">
+                                            <label for="myNewFieldInputId">Новый эмейл:</label>
+                                            <input type="text" class="form-control" id="myNewFieldInputId">
+                                        </div>
+                                        <div class="myFieldEditError">
+                                            <span>Ошибка</span>
+                                        </div>
+                                        <div class="myFieldEditButnsCon">
+                                            <button class="btn btn-default">Сохранить изменения</button>
+                                            <button class="btn btn-default">Отменить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myField panel panel-default" id="panel2">
+                            <div class="myFieldHeader">
+                                <span>Логин:</span>
+                                <div class="myFieldEditBtnCon">
+                                    <button data-toggle="collapse" data-target="#myLoginEditId" data-parent="#myProfileContainerId">редактировать
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </div>
+                                <span>ANDRmars</span>
+                            </div>
+                            <div class="collapse" id="myLoginEditId">
+                                <div class="myFieldEditForm">
+                                    <div class="myFieldEditFormCon">
+                                        <div class="myFieldInputCon">
+                                            <label for="myNewFieldInputId">Новый логин:</label>
+                                            <input type="text" class="form-control" id="myNewFieldInputId">
+                                        </div>
+                                        <div class="myFieldEditError">
+                                            <span>Ошибка</span>
+                                        </div>
+                                        <div class="myFieldEditButnsCon">
+                                            <button class="btn btn-default">Сохранить изменения</button>
+                                            <button class="btn btn-default">Отменить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myField panel panel-default" id="panel3">
+                            <div class="myFieldHeader">
+                                <span>Пароль:</span>
+                                <div class="myFieldEditBtnCon">
+                                    <button data-toggle="collapse" data-target="#myPasswordEditId" data-parent="#myProfileContainerId">редактировать
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </div>
+                                <span>********</span>
+                            </div>
+                            <div class="collapse" id="myPasswordEditId">
+                                <div class="myFieldEditForm">
+                                    <div class="myFieldEditFormCon">
+                                        <div class="myFieldInputCon">
+                                            <label for="myNewFieldInputId">Старвй пароль:</label>
+                                            <input type="text" class="form-control" id="myNewFieldInputId">
+                                        </div>
+                                        <div class="myFieldInputCon">
+                                            <label for="myNewFieldInputId">Новый пароль:</label>
+                                            <input type="text" class="form-control" id="myNewFieldInputId">
+                                        </div>
+                                        <div class="myFieldInputCon">
+                                            <label for="myNewFieldInputId">Повторите пароль:</label>
+                                            <input type="text" class="form-control" id="myNewFieldInputId">
+                                        </div>
+                                        <div class="myFieldEditError">
+                                            <span>Ошибка</span>
+                                        </div>
+                                        <div class="myFieldEditButnsCon">
+                                            <button class="btn btn-default">Сохранить изменения</button>
+                                            <button class="btn btn-default">Отменить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link href="footer.html" rel="import">
+</body>
+<script src="js/import.js"></script>
+
+</html>
