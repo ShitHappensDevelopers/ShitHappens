@@ -8,7 +8,8 @@
     <script src="jQuery/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/commonStyles.css">
+    <link rel="stylesheet" href="css/myMenu.css">
     <link rel="stylesheet" href="/css/StatStyles.css">
     <title>Site Stat</title>
 </head>
@@ -19,8 +20,46 @@
     <div>
         <div class="myContainer">
             <div class="myContent">
-                <div class="kek">
-                    
+                <div class="myStatistics">
+                    <p>Всего историй на сайте: <span>3</span></p>
+                    <p>Историй доступно сейчас: <span>6</span></p>
+                    <div class="mySelectList">
+                        <p id="mySelectListP">Историй исчезнет через </p>
+                        <div class="form-group myFormGroup">
+                            <select class="form-control" id="sel1">
+                                <option value="">1 час</option>
+                                <option value="">4 часа</option>
+                                <option value="">12 часов</option>
+                                <option value="">24 часа</option>
+                            </select>
+                        </div>
+                        <span>: 3</span>
+                    </div>
+                    <div class="myActiveUsers">
+                        <div class="col-xs-2">
+
+                        </div>
+                        <div class="col-xs-8">
+                            <h2>Самые активные пользователи</h2><br/>
+                            <div class="col-xs-1">
+
+                            </div>
+                            <div class="col-xs-9">
+                            <ol>
+                                <li>Андрей Маркусь: <span>200</span> постов</li>
+                                <li>Андрей Мокий: <span>182</span> постов</li>
+                                <li>Артем Тарасенко: <span>161</span> постов</li>
+                            </ol>
+                            </div>
+                            <div class="col-xs-2">
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 .myStat {
     background-color: white;
     padding: 50px 40px 30px 40px;
+    border-radius: 7px;
+    border: 1px solid rgba(134, 134, 134, 0.288);
     /* box-shadow: 0 3px 9px grey; */
     /* border: 1px solid black; */
 }

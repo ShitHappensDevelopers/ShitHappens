@@ -1,3 +1,21 @@
 .myContent {
     background-color: white;
+    padding: 50px;
+    border-radius: 7px;
+    border: 1px solid rgba(134, 134, 134, 0.288);
+}
+.myStatistics p,span,ol {
+    font-weight: bolder;
+    font-size: 17px;
+}
+.myFormGroup {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#mySelectListP {
+    display:inline-block;
+}
+.myActiveUsers {
+    margin-top: 60px;
 }

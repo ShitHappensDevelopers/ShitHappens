@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<script src="jQuery/jquery-3.3.1.min.js"></script>
+		<script src="bootstrap/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/loginFormStyles.css">
+	</head>
+	<body>
+		
+		<div class="myLogInFormContainer">
+			
+			<!-- <div class="row">
+				<div class="col-xs-11 text-center">
+					<h2>Вход</h2>
+				</div>
+				<div class="col-xs-1"></div>
+			</div> -->
+			<div class="row text-center loginFormHeader">
+				<h2>Вход</h2>
+				<span class="glyphicon glyphicon-remove"></span>
+			</div>
+
+			<div class="mySignUpWith">
+				<div class="row">
+					<div class="col-xs-6 text-left noPad">
+						<button class="btn myFacebookBtn">Facebook</button>
+					</div>
+					<div class="col-xs-6 text-right noPad">
+						<button class="btn myGoogleBtn">Google</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="text-center mySeparator">
+				<span>ИЛИ</span>
+			</div>
+			
+			<div class="myLogInForm">
+				<form action="" role="form">
+					<div class="form-group">
+						<input type="email" class="form-control" name="login" placeholder="Введите логин или емейл">
+						<!-- <label for="pass" class="text-danger">Error</label> -->
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="email" placeholder="Введите пароль">
+						<!-- <label for="pass" class="text-danger">Error</label> -->
+					</div>
+					<div class="row">
+						<div class="col-xs-6 text-left noPad">
+							<input type="checkbox" name="rememberMe" id="remeberMe">
+							<label for="remeberMe" id="rememberMeLbl">Запомнить меня</label>
+						</div>
+						<div class="col-xs-6 text-right noPad">
+							<a href="#">Забыли пароль?</a>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="myBlock">
+				<button class="btn btn-success" id="loginBtn">Вход</button>
+			</div>
+			<div class="text-center">
+				<span>Еще не зарегестрированы? <a href="#">Создать аккаунт</a></span>
+			</div>
+
+		</div>
+	</body>
+</html>
