@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="css/commonStyles.css">
 		<link rel="stylesheet" href="css/myMenu.css">
 		<link rel="stylesheet" href="css/storyTemplateStyles.css">
+		<link rel="stylesheet" href="css/filter.css">
 	</head>
 	<body>
 		<link href="header.html" rel="import">
@@ -75,7 +76,8 @@
 							</div>
 						</div>
 						<div class="col-xs-2">
-							<button class="btn btn-info">Filters</button>
+							<button class="btn btn-info" onclick="if (this.nextElementSibling.style.display!='none') this.nextElementSibling.style.display='none'; else this.nextElementSibling.style.display='block';">Filters</button>
+							<link href="filter.html" rel="import">
 						</div>
 					</div>
 				</div>
