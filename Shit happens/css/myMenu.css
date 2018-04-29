@@ -35,15 +35,25 @@
 	width: 160px;
 }
 
+.mySideMenuLogin .form-control {
+	padding: 18px 8px;
+}
+.mySideMenuLogin input[type="submit"] {
+	width: 100%;
+	font-size: 15px;
+	border: 1px solid #A4A4A4;
+}
+
+.filtersBtn {
+	width: 100%;
+	font-size: 14px;
+	font-weight: bolder;
+	padding: 12px 15px;
+	margin-top: 25px;
+}
 .myWall {
 	padding: 25px 10px 25px 25px;
 }
 .myWall > div:first-child {
 	padding: 0 14px 0 10px;
-}
-.myWall button {
-	width: 100%;
-	font-size: 14px;
-	font-weight: bolder;
-	padding: 12px 15px;
 }

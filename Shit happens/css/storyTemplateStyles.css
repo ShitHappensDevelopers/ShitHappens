@@ -3,6 +3,7 @@
 	border: 1px solid #727272;
 	border-radius: 20px;
 	box-sizing: border-box;
+	margin-bottom: 50px;
 }
 .myStoryHeader, .myStoryFooter {
 	box-sizing: border-box;
