@@ -18,13 +18,7 @@ var optbuttns = document.querySelectorAll(".mystoryoptionsbtn");
 Array.prototype.forEach.call(optbuttns, function(optbuttn) {
     var element= optbuttn.parentNode.querySelector(".myoptionscon");
             addListener(optbuttn,"click", function() {
-                if(element.style.display  == "none"){
-                    element.style.display = "block";
-                }
-                else
-                {
-                    element.style.display =  "none";
-                }
+              element.classList.toggle("myoptionsconhidden");
             });
 });
 
