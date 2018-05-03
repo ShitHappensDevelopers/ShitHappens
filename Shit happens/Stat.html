@@ -9,7 +9,6 @@
     <script src="bootstrap/bootstrap.min.js"></script>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/commonStyles.css">
-    <link rel="stylesheet" href="css/myMenu.css">
     <link rel="stylesheet" href="css/StatStyles.css">
     <title>Site Stat</title>
 </head>
@@ -66,12 +65,6 @@
     </div>
     <link href="footer.html" rel="import">
 </body>
-<!-- script for displaing imported documents in places where these imports was-->
-<script>
-    var parts = document.querySelectorAll("link[rel=import]");
-    Array.prototype.forEach.call(parts, function(element) {
-        element.parentElement.insertBefore(element.import.firstChild, element);
-    });
-</script>
+  <script src="js/import.js"></script>
 
 </html>

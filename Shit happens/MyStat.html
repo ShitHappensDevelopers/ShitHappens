@@ -83,12 +83,6 @@
 
     <link href="footer.html" rel="import">
 </body>
-<!-- script for displaing imported documents in places where these imports was-->
-<script>
-    var parts = document.querySelectorAll("link[rel=import]");
-    Array.prototype.forEach.call(parts, function(element) {
-        element.parentElement.insertBefore(element.import.firstChild, element);
-    });
-</script>
+  <script src="js/import.js"></script>
 
 </html>
