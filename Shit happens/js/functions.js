@@ -1,3 +1,33 @@
+// function to add eventlisteners on DOM elements 
+function addListener(element, eventName, handler) {
+    if (element.addEventListener) {
+      element.addEventListener(eventName, handler, false);
+    }
+    else if (element.attachEvent) {
+      element.attachEvent('on' + eventName, handler);
+    }
+    else {
+      element['on' + eventName] = handler;
+    }
+  }
+
+
+// this code make copy link button work. It add event listeners to buttons 
+//to show and hide needed functionality
+var optbuttns = document.querySelectorAll(".mystoryoptionsbtn");
+Array.prototype.forEach.call(optbuttns, function(optbuttn) {
+    var element= optbuttn.parentNode.querySelector(".myoptionscon");
+            addListener(optbuttn,"click", function() {
+                if(element.style.display  == "none"){
+                    element.style.display = "block";
+                }
+                else
+                {
+                    element.style.display =  "none";
+                }
+            });
+});
+
 
 // this code helps to toggle window for setting story lifetime
 $('#myStoryLife').change(function() {
