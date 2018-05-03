@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/myMenu.css">
 		<link rel="stylesheet" href="css/storyTemplateStyles.css">
 		<link rel="stylesheet" href="css/filter.css">
+		<link rel="stylesheet" href="css/createStoryStyles.css">
 	</head>
 	<body>
 		<link href="header.html" rel="import">
@@ -19,14 +20,10 @@
 			<div class="myContainer">
 				<div class="myContent">
 					<div class="col-xs-3 text-justify">
-						<div class="mySideMenu">
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#"><span class="glyphicon glyphicon-book"></span>&ensp; Мои истории</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-signal"></span>&ensp; Моя статистика</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-user"></span>&ensp; Мой профиль</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-off"></span>&ensp; Выход</a></li>
-							</ul>
-						</div>
+
+						<!-- <link href="offerToLogin.html" rel="import"> -->
+						<link href="MyMenu.html" rel="import">
+
 						<div class="myDayStat">
 							<h4>Дневная статистика</h4>
 							<div>
@@ -37,53 +34,39 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-9 myWall">
-						<div class="col-xs-10">
-							<div class="myStory">
-								<div class="myStoryHeader">
-									<div class="col-xs-5">
-										<div class="text-center myStoryLogin">ANDRmark</div>
-										<div class="text-center myStoryDate">01.05.2018 17:31</div>
-									</div>
-									<div class="col-xs-6">
-										<div class="myStoryDuration">expires at 3 days 8 hours</div>
-									</div>
-									<div class="col-xs-1 text-right">
-										<span class="glyphicon glyphicon-circle-arrow-down"></span>
-									</div>
-								</div>
-								<div class="myStoryContent">
-									<p>
-										Невеликий вступ: мій друг (доречі, іноді поводячийся як «прищучений») нещодавно купив нову спортивну фуфайку і кепку, і тепер весь час у них ходить. При цьому, носить старі чи то штани, чи то джинси та сапоги. От і виходить, що зверху він одягнутий як гопник, а знизу - як хто зна що.<br/>
-										Отже, коли я побачив його у такому вигляді, одразу почав розмову про гопників. Слово за слово, жартую:<br/>
-										- А прикинь, якщо не на цигарку гопати, а на ізоленту, га? Ото би ржач був!<br/>
-										- А що, норм ідея! Он, як раз, малий йде, причеплюся-но до нього!
-										Підходить друг до малого і, намагаючись імітувати прокурений голос, говорить пискляво:<br/>
-										- Си-и-иш, тєрпі-і-іла! Ізолє-е-ента є?!<br/>
-										Малий офігів, роздивився його, і відповідає:<br/>
-										- Ти шо, дебіл?
-									</p>
-								</div>
-								<div class="myStoryFooter">
-									<div class="col-xs-3 text-left">
-										<span class="glyphicon glyphicon-thumbs-up"></span> <span>20</span>
-									</div>
-									<div class="col-xs-6"></div>
-									<div class="col-xs-3 text-right">
-										<span>20</span> <span class="glyphicon glyphicon-thumbs-down"></span>
-									</div>
-								</div>
+					
+					<div class="col-xs-9 myCreateStory-Filters">
+
+						<div class="col-xs-10 myWall">
+							<link rel="import" href="createStory.html">
+							<div>
+								<link rel="import" href="storyTemplate.html">				
 							</div>
+						</div>	
+
+						<div class="col-xs-2">
+							<button class="btn btn-info filtersBtn" onclick="if (this.nextElementSibling.style.display!='none') this.nextElementSibling.style.display='none'; else this.nextElementSibling.style.display='block';">Filters</button>
+							<link href="filter.html" rel="import">
+						</div>
+					</div>
+					<!-- <div class="col-xs-9 myWall">
+						<link rel="import" href="createStory.html">
+						<div class="col-xs-10">
+							
+							<link rel="import" href="storyTemplate.html">
+
 						</div>
 						<div class="col-xs-2">
 							<button class="btn btn-info" onclick="if (this.nextElementSibling.style.display!='none') this.nextElementSibling.style.display='none'; else this.nextElementSibling.style.display='block';">Filters</button>
 							<link href="filter.html" rel="import">
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 		<link href="footer.html" rel="import">
 	</body>
 	<script src="js/import.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/shithappens.js"></script>
 </html>
