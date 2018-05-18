@@ -11,6 +11,7 @@
 	border-radius: 20px 20px 0 0;
 	padding: 10px 15px;
 	margin: 0;
+	overflow: auto;
 }
 .myStoryContent {
 	box-sizing: border-box;
