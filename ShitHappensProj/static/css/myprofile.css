@@ -1,0 +1,93 @@
+
+/* ------------- */
+
+
+
+.myprofilecontainer {
+min-height: 300px;
+font-size: 1.2em;
+}
+
+
+
+/* styles for forms for entering new login, email etc*/
+.myField{
+    margin: 20px;
+}
+.myFieldHeader, .myFieldEditForm{
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: 1px solid rgba(134, 134, 134, 0.288);
+}
+
+.myFieldHeader{
+    padding: 10px 15px;
+    overflow: hidden;
+    font-weight: bolder;
+    position: relative;
+    top:1px;
+}
+
+.myFieldEditBtnCon{
+    padding: 0 10px 0 25px;
+    text-align: right;
+    float:right;  
+}
+.myFieldEditBtnCon > button{
+    font-weight: normal;
+    font-size: 1em;
+    border: 0;
+    opacity: 0.6;
+    background-color:  transparent;
+}
+.myFieldEditBtnCon > button:hover{
+    opacity: 1;
+}
+
+.myFieldEditForm{
+    background-color: white; 
+    padding: 10px 15px;
+    overflow: hidden;
+    font-weight: bolder;
+}
+
+.myFieldEditFormCon{
+    min-height: 50px;
+}
+.myFieldInputCon{
+    margin: 10px;
+}
+.myFieldInputCon > input{
+    display: inline-block;
+     width: 200px; 
+}
+
+.myFieldInputCon > label{
+    display: inline-block;
+    width: 30%;
+    /* margin-right: 30px; */
+
+}
+.myFieldEditError{
+    margin: 10px;
+    margin-left: 32%;
+    color: red;
+    opacity: 0.8;
+}
+.myFieldEditButnsCon{
+    margin: 10px;
+    margin-left: 30%;
+}
+
+/* discarding some bootstraps styles for panels*/
+#myProfileContainerId{
+margin: 0;
+}
+#panel1, #panel2, #panel3{
+    margin: 20px;
+    background-color: transparent;
+    border: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

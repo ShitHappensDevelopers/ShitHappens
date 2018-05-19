@@ -1,0 +1,89 @@
+body {
+	margin-top: 10px;
+}
+
+.row {
+	margin: 0;
+}
+.noPad {
+	padding: 0;
+}
+
+.myLogInFormContainer {
+	box-sizing: border-box;
+	margin: auto;
+	overflow: auto;
+	width: 350px;
+	border: 1px solid #878787;
+	padding: 8px 25px;
+}
+.myLogInFormContainer h2 {
+	margin-top: 0;
+}
+.loginFormHeader {
+	position: relative;
+}
+.loginFormHeader > span {
+	position: absolute;
+	font-size: 20px;
+	right: -22px;
+	top: -5px;
+	cursor: pointer;
+}
+.loginFormHeader > span:hover {
+	color: #5B5B5B;
+}
+
+.myFacebookBtn, .myGoogleBtn {
+	width: 97%;
+	border-radius: 30px;
+	color: white;
+	padding: px;
+	transition: 0.3s;
+	margin-bottom: 8px;
+}
+.myFacebookBtn {
+	background-color: #3b5998;
+	border: 1px solid #203C76;
+}
+.myGoogleBtn {
+	background-color: #DE5543;
+	border: 1px solid #BB4838;
+}
+.myFacebookBtn:hover {
+	color: white;
+	background-color: #203C76;
+}
+.myGoogleBtn:hover {
+	color: white;
+	background-color: #BB4838;
+}
+
+
+.mySeparator {
+	margin: 10px 0 25px;
+	border-bottom: 1px solid #A1A1A1;
+	position: relative;	
+}
+.mySeparator > span {
+	position: absolute;
+	margin: -10px;
+	background-color: white;;
+	width: 50px;
+	left: 45%;
+}
+
+
+.myLogInForm > form > .form-group {
+	margin-bottom: 10px;
+}
+#rememberMeLbl {
+	font-weight: normal;
+	cursor: pointer;
+}
+.myLogInFormContainer > .myBlock {
+	margin-bottom: 10px
+}
+#loginBtn {
+	width: 40%;
+}

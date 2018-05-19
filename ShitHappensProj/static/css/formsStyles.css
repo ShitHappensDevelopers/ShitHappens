@@ -1,0 +1,97 @@
+body {
+	margin-top: 10px;
+	height: 1300px;
+}
+
+
+.myRegFormContainer {
+	box-sizing: border-box;
+	margin: auto;
+	height: 700px;
+	width: 400px;
+	/*border: 1px solid black;*/
+	padding: 15px 25px;
+}
+.myRegFormContainer > h3 {
+	margin: 5px 0 25px;
+}
+.myRegForm .form-control {
+	height: 44px;
+	font-size: 15px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.myRegForm > form > div {
+	margin-bottom: 8px;
+}
+.myRegForm button[type="submit"] {
+	margin: 5px 0 15px;
+	transition: 0.3s;
+}
+.myRegForm > p, .myRegForm > p > a, .myFacebookBtn, .myGoogleBtn {
+	font-weight: bold;
+	text-align: center;
+}
+.myRegForm .form-group > label {
+	visibility: hidden;
+	height: 0;
+}
+
+
+.mySeparator {
+	margin: 30px 0;
+	border-bottom: 1px solid #A1A1A1;
+	position: relative;	
+}
+.mySeparator > span {
+	position: absolute;
+	margin: -10px;
+	background-color: white;;
+	width: 50px;
+	left: 45%;
+}
+
+
+.mySignUpWith {
+	/*margin-top: 30px;*/
+}
+.myFacebookBtn, .myGoogleBtn {
+	width: 100%;
+	border-radius: 30px;
+	color: white;
+	padding: 10px;
+	transition: 0.3s;
+	margin-bottom: 8px;
+}
+.myFacebookBtn {
+	background-color: #3b5998;
+	border-bottom: 3px solid #203C76;
+}
+.myGoogleBtn {
+	background-color: #DE5543;
+	border-bottom: 3px solid #BB4838;
+}
+.myFacebookBtn:hover {
+	color: white;
+	background-color: #203C76;
+}
+.myGoogleBtn:hover {
+	color: white;
+	background-color: #BB4838;
+}
+
+
+
+
+
+
+
+
+.myLogInFormContainer {
+	box-sizing: border-box;
+	margin: auto;
+	height: 400px;
+	width: 500px;
+	border: 1px solid black;
+	padding: 15px 25px;
+}
