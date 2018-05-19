@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainsite/', include('mainsite.urls')),
+    #path('accounts/', include('django.contrib.auth.urls')),
     ]
 #urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
