@@ -43,3 +43,7 @@ textarea {
 .myFeedback {
 	margin-bottom: 50px;
 }
+
+.mySubmitBtn {
+	width: 100%;
+}
