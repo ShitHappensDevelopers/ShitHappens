@@ -40,6 +40,7 @@
 .myStoryLogin {
 	font-size: 16px;
 	font-weight: bolder;
+	padding-left: 20px;
 }
 .myStoryDate, .myStoryDuration {
 	font-size: 14px;

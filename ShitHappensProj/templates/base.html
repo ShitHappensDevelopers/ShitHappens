@@ -5,15 +5,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Все истории</title>
+		<title>{% block title %} Все истории {% endblock title %}</title>
 		<script src="{% static 'jQuery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
 		<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/commonStyles.css' %}">
-		<link rel="stylesheet" href="{% static 'css/myMenu.css' %}">
-		<link rel="stylesheet" href="{% static 'css/storyTemplateStyles.css' %}">
-		<link rel="stylesheet" href="{% static 'css/filter.css' %}">
-		<link rel="stylesheet" href="{% static 'css/createStoryStyles.css' %}">
+		{% block links %}
+			<link rel="stylesheet" href="{% static 'css/myMenu.css' %}">
+			<link rel="stylesheet" href="{% static 'css/storyTemplateStyles.css' %}">
+			<link rel="stylesheet" href="{% static 'css/filter.css' %}">
+			<link rel="stylesheet" href="{% static 'css/createStoryStyles.css' %}">
+		{% endblock links %}
 	</head>
 	<body>
 		{% block header %}
@@ -24,9 +26,9 @@
 			{% include "nav.html" %}
 		{% endblock nav %}
 
-		<div>
-			{% block content %}{% endblock content %}			
-		</div>
+		
+		{% block content %}{% endblock content %}			
+		
 
 		{% block footer %}
 			{% include "footer.html" %}

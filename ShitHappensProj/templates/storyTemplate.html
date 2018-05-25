@@ -1,0 +1,29 @@
+<div class="myStory">
+	<div class="row myStoryHeader">
+		<div class="col-xs-5">
+			<div class="text-left myStoryLogin">{{ story.user_id }}</div>
+			<div class="text-left myStoryDate">{{ story.create_date|date:"d M Y, H:i" }}</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="myStoryDuration">expires at {{ story.expire_date|date:"d M Y, H:i" }}</div>
+		</div>
+		<div class="col-xs-1 text-right">
+			<span class="mystoryoptionsbtn glyphicon glyphicon-circle-arrow-down"></span>
+			<!-- {% include "copylink.html" %} -->
+		</div>
+	</div>
+	<div class="myStoryContent">
+		<p>
+			{{ story.story_content }}
+		</p>
+	</div>
+	<div class="myStoryFooter">
+		<div class="col-xs-3 text-left">
+			<span class="glyphicon glyphicon-thumbs-up"></span> <span>{{ story.like_count }}</span>
+		</div>
+		<div class="col-xs-6"></div>
+		<div class="col-xs-3 text-right">
+			<span>{{ story.dislike_count }}</span> <span class="glyphicon glyphicon-thumbs-down"></span>
+		</div>
+	</div>
+</div>
