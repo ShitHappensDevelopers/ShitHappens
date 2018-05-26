@@ -1,0 +1,17 @@
+.myContainer {
+  overflow: auto;
+}
+
+.myCarousel {
+  height: 407px;
+  margin-top: 40px;
+}
+
+.carousel, .item, .carousel-inner {
+  height:100%;
+}
+
+img {
+      width: 100%;
+      height: 100%;
+}
