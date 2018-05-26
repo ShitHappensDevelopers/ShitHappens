@@ -1,0 +1,59 @@
+<html>
+
+<body>
+    <div class="myFilterOuterCon">
+        <div class="myFilterCon">
+            <div class="myFilterOverlay"></div>
+            <div class="myFilterInnerCon">
+                <div class="myFilterSortRadioCon">
+                    <span>Сортировать по:</span>
+                    <br>
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="optradio">Дате</label>
+                    </div>
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="optradio">Популярности</label>
+                    </div>
+                </div>
+                <div class="myFilterExpireSelect">
+                    <span>Отображать истории которые пропадут через: </span>
+                    <br>
+                    <div class="myFilterDropdownInput">
+                        <select onchange="this.nextElementSibling.value=this.value">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <input type="text" name="format" size="1" value="1">
+                    </div>
+                    <span>часа(ов)</span>
+                </div>
+                <div class="myFilterLastTimeSelect">
+                    <span>Отображать истории только за последние: </span>
+                    <br>
+                    <div class="myFilterDropdownInput">
+                        <select onchange="this.nextElementSibling.value=this.value">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <input type="text" name="format" size="1" value="1">
+                    </div>
+                    <span>часа(ов)</span>
+                </div>
+                <div class="myFilterUserSelect">
+                    <span>Отображать истории только пользователя: </span>
+                    <br>
+                    <input type="text" name="format" size="15" value="" placeholder="логин или емейл">
+                </div>
+                <button type="button" class="btn btn-default btn-block" id="myFilterApplyBtnId">Применить</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

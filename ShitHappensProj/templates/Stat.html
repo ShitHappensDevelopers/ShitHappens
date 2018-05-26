@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Site Stat {% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/StatStyles.css' %}">
+{% endblock links %}
+
+
+{% block content %}
+<div>
+	<div class="myContainer">
+		<div class="myContent">
+			<div class="myStatistics">
+				<p>Всего историй на сайте: <span>{{ all_stories_num }}</span></p>
+				<p>Историй доступно сейчас: <span>{{ available_stories_num }}</span></p>
+				<div class="mySelectList">
+					<p id="mySelectListP">Историй исчезнет через </p>
+					<div class="form-group myFormGroup">
+						<select class="form-control" id="sel1">
+							<option value="">1 час</option>
+							<option value="">4 часа</option>
+							<option value="">12 часов</option>
+							<option value="">24 часа</option>
+						</select>
+					</div>
+					<span>: {{ disappear_stories_num }}</span>
+				</div>
+				<div class="myActiveUsers">
+					<div class="col-xs-2">
+					</div>
+					<div class="col-xs-8">
+						<h2>Самые активные пользователи</h2><br/>
+						<div class="col-xs-1">
+						</div>
+						<div class="col-xs-9">
+							<ol>
+								<li>Андрей Маркусь: <span>200</span> постов</li>
+								<li>Андрей Мокий: <span>182</span> постов</li>
+								<li>Артем Тарасенко: <span>161</span> постов</li>
+							</ol>
+						</div>
+						<div class="col-xs-2">
+						</div>
+					</div>
+					<div class="col-xs-2">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

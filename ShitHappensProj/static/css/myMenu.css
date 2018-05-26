@@ -1,6 +1,6 @@
 
 .myContainer {
-	width: 950px;
+	width: 1100px;
 	margin: auto;
 }
 .myContent {
@@ -13,7 +13,8 @@
 }
 .myContent > div:nth-child(2) {
 	/*padding: 25px, 50px;*/
-} 
+}
+
 
 .mySideMenu {
 	background-color: white;
@@ -34,15 +35,19 @@
 	background-color: white;
 	width: 160px;
 }
-
 .mySideMenuLogin .form-control {
 	padding: 18px 8px;
 }
 .mySideMenuLogin input[type="submit"] {
-	width: 100%;
-	font-size: 15px;
+	width: 80%;
+	font-size: 14px;
+	padding: 8px;
 	border: 1px solid #A4A4A4;
 }
+.mySideMenuLogin input[type="email"], .mySideMenuLogin input[type="password"] {
+	width: 80%;
+}
+
 
 .filtersBtn {
 	width: 100%;
@@ -51,6 +56,8 @@
 	padding: 12px 15px;
 	margin-top: 25px;
 }
+
+
 .myWall {
 	padding: 25px 10px 25px 25px;
 }

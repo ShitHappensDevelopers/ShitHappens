@@ -1,6 +1,7 @@
 
 body {
-	background-color: #F7F6F6
+	background-color: #F7F6F6;
+	min-width: 1100px;
 }
 
 
@@ -122,4 +123,10 @@ footer > ul {
 footer > ul > li {
 	display: inline-block;
 	padding: 10px 30px;
+}
+footer > ul > li > a {
+	color: white;
+}
+footer > ul > li > a:hover {
+	color: #C7C7C7;
 }

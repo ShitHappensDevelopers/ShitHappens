@@ -1,0 +1,66 @@
+body {
+	background-color:#cccccc
+}
+div.myBlockConfirmation {
+	position:absolute;
+	left:50%;
+	margin-left:-325px;
+	top: 50%;
+	margin-top: -130px;
+}
+.mySize {
+	font-size: 30px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+div.myBlockGreen {
+	background: #ccffcc;
+	width: 650px;
+	height: 40px;
+	color:66cc66;
+}
+input.myButtonGreen {
+	color: white;
+	background-color: 66cc66;
+	font-size: 15px;
+	height: 40px;
+	width: 150px;
+	border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+input.myButtonGreen:focus {
+	border: 2px solid #000000;
+}
+div.myBlockRed {
+	background: #ffcccc;
+	width: 650px;
+	height: 40px;
+	color:cc6666;
+}
+input.myButtonRed {
+	color: white;
+	background-color: cc6666;
+	font-size: 15px;
+	height: 40px;
+	width: 150px;
+	border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+input.myButtonRed:focus {
+	border: 2px solid #000000;
+}
+.mySentenceGreen > label {
+	position: absolute;
+	left: 50%;
+	margin-left: -125px;
+	margin-top: 10px;
+}
+.mySentenceRed > label {
+	position: absolute;
+	left: 50%;
+	margin-left: -65px;
+	margin-top: 10px;
+}
