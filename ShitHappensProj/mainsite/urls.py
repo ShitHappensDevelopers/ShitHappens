@@ -13,4 +13,5 @@ urlpatterns = [
 	path('ShitHappens', views.shithappens),
 	path('MyStat', views.mystatistic),
 	path('Main', views.main),
+	path('MyStories', views.mystories),
 ]

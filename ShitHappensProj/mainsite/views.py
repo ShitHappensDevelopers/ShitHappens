@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . import forms
 from .models import Story
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -34,14 +35,21 @@ def statistic(request):
 
 
 def shithappens(request):
-	stories = Story.objects.all()
-	data = { "stories": stories }
-	return render(request, "ShitHappens.html", context=data)
+	stories = Story.objects.all().order_by('like_count').reverse()
+	print(stories)
+	return render(request, "ShitHappens.html", context={ "stories": stories })
 
 
+@login_required
 def mystatistic(request):
 	return render(request, "MyStat.html")
 
 
 def main(request):
 	return render(request, "Main.html")
+
+
+@login_required
+def mystories(request):
+	stories = Story.objects.filter(user_id_id=request.user.id)
+	return render(request, "MyStories.html", context={ "stories": stories });

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Все истории {% endblock title %}
+
+
+{% block content %}
+	<div>
+		<div class="myContainer">
+			<div class="myContent">
+
+				<div class="col-xs-3 text-justify">
+					
+					{% if user.is_authenticated %}
+						{% include "myMenu.html" %}
+					{% else %}
+						{% include "sideLoginOffer.html" %}
+					{% endif %}
+
+					{% include "dayStat.html" %}
+				</div>								
+
+				<div class="col-xs-9 myCreateStory-Filters">
+					<div class="col-xs-10 myWall">
+						
+						{% if user.is_authenticated %}
+							{% include "createStory.html" %}
+						{% endif %}
+
+						<div>
+							{% for story in stories %}
+								{% include "storyTemplate.html" %}
+							{% endfor %}					
+						</div>
+					</div>
+
+					<div class="col-xs-2">
+						<button class="btn btn-primary filtersBtn" onclick="if (this.nextElementSibling.style.display!='none') this.nextElementSibling.style.display='none'; else this.nextElementSibling.style.display='block';">Filters</button>
+						
+						{% include "filters.html" %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock content %}

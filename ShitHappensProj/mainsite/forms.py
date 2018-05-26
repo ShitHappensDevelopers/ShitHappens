@@ -22,12 +22,13 @@ class MyProfileChangeUsernameForm(forms.Form):
     new_username = forms.EmailField(help_text="Enter new username (login)", label="Новое имя пользователя")
     new_username.widget.attrs.update({'class':'form-control'})
 
-    def clean_new_email(self):
+    def clean_new_username(self):
         newemail = self.cleaned_data['new_username']   
         #check if this email is unique in database
         if User.objects.filter(username__exact=newemail).count() > 0:
             raise ValidationError(_('Такое имя пользователя уже используется другим пользователем'))
         return newemail
+
 
 class MyProfileChangePasswdForm(forms.Form):
     old_password = forms.EmailField(help_text="Enter old password", label="Enter old password")
@@ -37,8 +38,6 @@ class MyProfileChangePasswdForm(forms.Form):
     old_password.widget.attrs.update({'class':'form-control'})
     new_password1.widget.attrs.update({'class':'form-control'})
     new_password2.widget.attrs.update({'class':'form-control'})
-
-    
 
     def clean_new_password1(self):
         pwd1 = self.cleaned_data['new_password1']   
