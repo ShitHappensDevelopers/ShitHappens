@@ -1,152 +1,132 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load staticfiles %} {% block title %} Мой профиль {% endblock title %} {% block links %}
+<link rel="stylesheet" href="{% static 'css/myMenu.css' %}">
+<link rel="stylesheet" href="{% static 'css/myprofile.css' %}"> {% endblock links %} {% block content %}
+<div>
+    <div class="myContainer">
+        <div class="myContent">
+            <div class="col-xs-3 text-justify">
 
-{% block content %}
-<link rel="stylesheet" href="/static/css/commonStyles.css">
-<link rel="stylesheet" href="/static/css/myMenu.css">
-<link rel="stylesheet" href="/static/css/myprofile.css">
-<div class="myContainer">
-    <div class="myContent">
-        <div class="col-xs-3 text-justify">
-            <div class="mySideMenu">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-book"></span>&ensp; Мои истории</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-signal"></span>&ensp; Моя статистика</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-user"></span>&ensp; Мой профиль</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-off"></span>&ensp; Выход</a>
-                    </li>
-                </ul>
+                {% if user.is_authenticated %} 
+                    {% include "myMenu.html" %} 
+                {% else %} 
+                    {% include "sideLoginOffer.html" %}
+                {% endif %} 
+                {%include "dayStat.html" %}
             </div>
-            <div class="myDayStat">
-                <h4>Дневная статистика</h4>
-                <div>
-                    Сейчас на сайте:
-                    <br/>
-                    <span>X</span>
-                    <br/>
-                    <br/> Сегодня посетителей:
-                    <br/>
-                    <span>Y</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-9">
-            <div class="myprofilecontainer panel-group" id="myProfileContainerId">
-                <div class="myField panel panel-default" id="panel1">
-                    <div class="myFieldHeader">
-                        <span>Эмейл:</span>
-                        <div class="myFieldEditBtnCon">
-                            <button data-toggle="collapse" data-target="#myEmailEditId" data-parent="#myProfileContainerId">редактировать
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                        </div>
-                        <span>usermail1234@example.domaim.com</span>
-                    </div>
-                    <div class="collapse" id="myEmailEditId">
-                        <form action="" method="post" class="myFieldEditForm">
-                                {% csrf_token %}
-                            <div class="myFieldEditFormCon">
-                                <div class="myFieldInputCon">
-                                    {{ formchangeEmail.new_email.label_tag }}
-                                    {{ formchangeEmail.new_email }}
-                                    <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
-                                </div>
-                                <div class="myFieldEditError">
-                                        {{ formchangeEmail.errors }}
-                                    <!-- <span>Ошибка</span> -->
-                                </div>
-                                <div class="myFieldEditButnsCon">
-                                    <button class="btn btn-default">Сохранить изменения</button>
-                                    <button class="btn btn-default">Отменить</button>
-                                </div>
+            <div class="col-xs-9">
+                <div class="myprofilecontainer panel-group" id="myProfileContainerId">
+                    <div class="myField panel panel-default" id="panel1">
+                        <div class="myFieldHeader">
+                            <span>Эмейл:</span>
+                            <div class="myFieldEditBtnCon">
+                                <button data-toggle="collapse" data-target="#myEmailEditId" data-parent="#myProfileContainerId">редактировать
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
                             </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="myField panel panel-default" id="panel2">
-                    <div class="myFieldHeader">
-                        <span>Логин:</span>
-                        <div class="myFieldEditBtnCon">
-                            <button data-toggle="collapse" data-target="#myLoginEditId" data-parent="#myProfileContainerId">редактировать
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
+                            <span>
+                                {% if user.is_authenticated %}
+                                    {{user.email}}
+                                {%endif%}
+                            </span>
                         </div>
-                        <span>ANDRmars</span>
-                    </div>
-                    <div class="collapse" id="myLoginEditId">
-                        <form action="" method="post" class="myFieldEditForm">
+                        <div class="collapse" id="myEmailEditId">
+                            <form action="{% url 'myprofilepattern-action' 'changeemail' %}" method="post" class="myFieldEditForm">
                                 {% csrf_token %}
-                            <div class="myFieldEditFormCon">
-                                <div class="myFieldInputCon">
-                                    {{formchangeUsername.new_username.label_tag }}
-                                    {{ formchangeUsername.new_username }}
-                                    <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
+                                <div class="myFieldEditFormCon">
+                                    <div class="myFieldInputCon">
+                                        {{ formchangeEmail.new_email.label_tag }} {{ formchangeEmail.new_email }}
+                                        <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
+                                    </div>
+                                    <div class="myFieldEditError">
+                                        {{ formchangeEmail.new_email.errors }}
+                                        <!-- <span>Ошибка</span> -->
+                                    </div>
+                                    <div class="myFieldEditButnsCon">
+                                        <button class="btn btn-default">Сохранить изменения</button>
+                                        <button type="button" class="btn btn-default">Отменить</button>
+                                    </div>
                                 </div>
-                                <div class="myFieldEditError">
-                                        {{ formchangeUsername.errors }}
-                                    <!-- <span>Ошибка</span> -->
-                                </div>
-                                <div class="myFieldEditButnsCon">
-                                    <button class="btn btn-default">Сохранить изменения</button>
-                                    <button class="btn btn-default">Отменить</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="myField panel panel-default" id="panel3">
-                    <div class="myFieldHeader">
-                        <span>Пароль:</span>
-                        <div class="myFieldEditBtnCon">
-                            <button data-toggle="collapse" data-target="#myPasswordEditId" data-parent="#myProfileContainerId">редактировать
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
+                            </form>
                         </div>
-                        <span>********</span>
                     </div>
-                    <div class="collapse" id="myPasswordEditId">
-                        <form action="" method="post" class="myFieldEditForm">
-                                {% csrf_token %}
-                            <div class="myFieldEditFormCon">
-                                <div class="myFieldInputCon">
-                                    {{formchangePasswd.old_password.label_tag }}
-                                    {{ formchangePasswd.old_password }}
-                                    <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
-                                </div>
-                                <div class="myFieldInputCon">
-                                    {{formchangePasswd.new_password1.label_tag }}
-                                    {{ formchangePasswd.new_password1 }}
-                                    <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
-                                </div>
-                                <div class="myFieldInputCon">
-                                    {{formchangePasswd.new_password2.label_tag }}
-                                    {{ formchangePasswd.new_password1 }}
-                                    <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
-                                </div>
-                                <div class="myFieldEditError">
-                                        {{ formchangePasswd.errors }}
-                                    <!-- <span>Ошибка</span> -->
-                                </div>
-                                <div class="myFieldEditButnsCon">
-                                    <button class="btn btn-default">Сохранить изменения</button>
-                                    <button class="btn btn-default">Отменить</button>
-                                </div>
+                    <div class="myField panel panel-default" id="panel2">
+                        <div class="myFieldHeader">
+                            <span>Логин:</span>
+                            <div class="myFieldEditBtnCon">
+                                <button data-toggle="collapse" data-target="#myLoginEditId" data-parent="#myProfileContainerId">редактировать
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
                             </div>
-                        </form>
+                            <span>
+                                {% if user.is_authenticated %}
+                                    {{user.username}}
+                                {%endif%}
+                            </span>
+                        </div>
+                        <div class="collapse" id="myLoginEditId">
+                            <form action="{% url 'myprofilepattern-action' 'changeusername' %}" method="post" class="myFieldEditForm">
+                                {% csrf_token %}
+                                <div class="myFieldEditFormCon">
+                                    <div class="myFieldInputCon">
+                                        {{formchangeUsername.new_username.label_tag }} {{ formchangeUsername.new_username }}
+                                        <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
+                                    </div>
+                                    <div class="myFieldEditError">
+                                        {{ formchangeUsername.new_username.errors }}
+                                        <!-- <span>Ошибка</span> -->
+                                    </div>
+                                    <div class="myFieldEditButnsCon">
+                                        <button class="btn btn-default">Сохранить изменения</button>
+                                        <button type="button" class="btn btn-default">Отменить</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="myField panel panel-default" id="panel3">
+                        <div class="myFieldHeader">
+                            <span>Пароль:</span>
+                            <div class="myFieldEditBtnCon">
+                                <button data-toggle="collapse" data-target="#myPasswordEditId" data-parent="#myProfileContainerId">редактировать
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </div>
+                            <span>********</span>
+                        </div>
+                        <div class="collapse" id="myPasswordEditId">
+                            <form action="{% url 'myprofilepattern-action' 'changepasswd' %}" method="post" class="myFieldEditForm">
+                                {% csrf_token %}
+                                <div class="myFieldEditFormCon">
+                                    <div class="myFieldInputCon">
+                                        {{formchangePasswd.old_password.label_tag }} {{ formchangePasswd.old_password }}
+                                        <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
+                                    </div>
+                                    <div class="myFieldInputCon">
+                                        {{formchangePasswd.new_password1.label_tag }} {{ formchangePasswd.new_password1 }}
+                                        <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
+                                    </div>
+                                    <div class="myFieldInputCon">
+                                        {{formchangePasswd.new_password2.label_tag }} {{ formchangePasswd.new_password2 }}
+                                        <!-- <input type="text" class="form-control" id="myNewFieldInputId"> -->
+                                    </div>
+                                    <div class="myFieldEditError">
+                                        {{ formchangePasswd.non_field_errors }}
+                                        {{ formchangePasswd.old_password.errors }}
+                                        {{ formchangePasswd.new_password1.errors }}
+                                        {{ formchangePasswd.new_password2.errors }}
+                                        <!-- <span>Ошибка</span> -->
+                                    </div>
+                                    <div class="myFieldEditButnsCon">
+                                        <button class="btn btn-default">Сохранить изменения</button>
+                                        <button type="button" class="btn btn-default">Отменить</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock content %}
