@@ -5,6 +5,8 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
 	path('someurl', RedirectView.as_view(url='/')),
+	path('myprofile/<acttype>', views.myprofile, name='myprofilepattern'),
+	path('myprofile', views.myprofile, name='myprofilepattern', ),
 	#path('base', views.about),
 	path('AboutUs', views.about),
 	path('Stat', views.statistic),
