@@ -10,11 +10,12 @@
 		<script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
 		<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/commonStyles.css' %}">
+		<link rel="stylesheet" href="{% static 'css/loginFormStyles.css' %}">
 		{% block links %}
 			<link rel="stylesheet" href="{% static 'css/myMenu.css' %}">
 			<link rel="stylesheet" href="{% static 'css/storyTemplateStyles.css' %}">
 			<link rel="stylesheet" href="{% static 'css/filter.css' %}">
-			<link rel="stylesheet" href="{% static 'css/createStoryStyles.css' %}">
+			<link rel="stylesheet" href="{% static 'css/createStoryStyles.css' %}">			
 		{% endblock links %}
 	</head>
 	<body>
@@ -22,10 +23,13 @@
 			{% include "header.html" %}
 		{% endblock header %}
 
+		{% include "LoginForm.html" %}
+
+
 		{% block nav %}
 			{% include "nav.html" %}
-		{% endblock nav %}
-
+		{% endblock nav %}	
+		
 		
 		{% block content %}{% endblock content %}			
 		

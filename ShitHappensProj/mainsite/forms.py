@@ -31,6 +31,7 @@ class MyProfileChangeUsernameForm(forms.Form):
             raise ValidationError(_('Такое имя пользователя уже используется другим пользователем'))
         return newusername
 
+
 class MyProfileChangePasswdForm(forms.Form):
     old_password = forms.CharField(widget=forms.PasswordInput(), help_text="Enter old password", label="Старый пароль")
     new_password1 = forms.CharField(widget=forms.PasswordInput(), help_text="Enter new password", label="Новый пароль")
