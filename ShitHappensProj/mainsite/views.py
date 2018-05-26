@@ -26,7 +26,7 @@ def statistic(request):
 	available_stories_num = Story.objects.filter(is_active=True).count()
 	disappear_stories_num = 1;
 
-	data = { "all_stories_num": all_stories_num, 
+	data = { "all_stories_num": all_stories_num,
 	"available_stories_num": available_stories_num,
 	"disappear_stories_num": disappear_stories_num };
 
@@ -41,3 +41,7 @@ def shithappens(request):
 
 def mystatistic(request):
 	return render(request, "MyStat.html")
+
+
+def main(request):
+	return render(request, "Main.html")
