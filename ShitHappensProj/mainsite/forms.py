@@ -73,3 +73,39 @@ class CreateNewStory(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField(help_text="Enter username or email", label="Логин", widget=forms.TextInput(attrs={'placeholder': 'Введите логин'}))
     passwd = forms.CharField(help_text="Enter password", label="Пароль", widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль'}))
+
+class RegisterNewUserForm(forms.Form):
+    username = forms.CharField(help_text="Enter username or email", label="Логин", widget=forms.TextInput(attrs={'placeholder': 'Введите логин'}))
+    email = forms.EmailField(help_text="Enter new email", label="Эмейл", error_messages={'invalid': 'Такой имейл неподходит'}, widget=forms.EmailInput(attrs={'placeholder': 'Введите эмейл'}))
+    passwd1 = forms.CharField(help_text="Enter password", label="Пароль", widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль'}))
+    passwd2 = forms.CharField(help_text="Enter password", label="Повторите Пароль", widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
+
+    def clean_username(self):
+        newusername = self.cleaned_data['username']   
+        #check if this email is unique in database
+        if User.objects.filter(username__exact=newusername).count() > 0:
+            raise ValidationError(_('Такое имя пользователя уже используется другим пользователем'))
+        return newusername
+
+    def clean_email(self):
+        newemail = self.cleaned_data['email']   
+        #check if this email is unique in database
+        if User.objects.filter(email__exact=newemail).count() > 0:
+            raise ValidationError(_('Такой имейл уже используется другим пользователем'))
+        return newemail
+
+    def clean_passwd1(self):
+        pwd1 = self.cleaned_data['passwd1']   
+        #check if this new password is valid 
+        if pwd1 == "":
+            raise ValidationError(_('Этот пароль не подходит'))
+        return pwd1
+
+    def clean(self):
+        cleaned_data = super().clean()
+        pwd1 = cleaned_data.get("passwd1")
+        pwd2 = cleaned_data.get("passwd2")
+        print("test")
+        if(pwd1 != pwd2):
+            raise forms.ValidationError("Пароли не совпадают")
+        return cleaned_data

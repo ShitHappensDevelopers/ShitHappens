@@ -139,3 +139,18 @@ def loginview(request):
 def logoutview(request):
 	logout(request)
 	return  redirect('home-page')
+
+def registernewuserview(request):
+	registernewuserform = None
+	if request.method == 'POST':
+		registernewuserform = forms.RegisterNewUserForm(request.POST)
+		if registernewuserform.is_valid():
+			username = registernewuserform.cleaned_data['username']
+			email = registernewuserform.cleaned_data['email']
+			passwd = registernewuserform.cleaned_data['passwd1']
+			user = User.objects.create_user(username, email, passwd)
+			print(username)
+			return  redirect('home-page')
+	else:
+		registernewuserform = forms.RegisterNewUserForm()
+	return render(request, "forms.html", context={ "registernewuserform": registernewuserform})

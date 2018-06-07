@@ -16,7 +16,7 @@
             <div class="myBtns">
                 {% if not user.is_authenticated %}
                 <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myLoginModal">Sign in</button>
-                <button class="btn btn-primary">Sign up</button>
+                <button class="btn btn-primary" onclick="location.href='{% url 'registernewuserurl' %}';">Sign up</button>
                 {%else%}
                 <div>{{ user.username }}</div>
                 {% endif %}

@@ -1,6 +1,6 @@
 {% load customtemplatetags %}
 <div class="mySideMenuLogin">
-	<form method="post", action="{% url 'loginurl' %}", role="form">
+	<form method="post", action="{% url 'loginurl' %}" role="form">
 			{% csrf_token %}
 		<div class="form-group">
 				{{loginform.username|addcss:"form-control"}}
