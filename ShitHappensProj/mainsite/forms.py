@@ -68,3 +68,8 @@ class CreateNewStory(forms.Form):
     days_num.widget.attrs.update({'class':'myInputNumber'})
     hours_num.widget.attrs.update({'class':'myInputNumber'})
     minutes_num.widget.attrs.update({'class':'myInputNumber'})
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(help_text="Enter username or email", label="Логин", widget=forms.TextInput(attrs={'placeholder': 'Введите логин'}))
+    passwd = forms.CharField(help_text="Enter password", label="Пароль", widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль'}))

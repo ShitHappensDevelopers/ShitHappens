@@ -21,14 +21,13 @@ h1 {
 }
 
 .myTeam .myMember {
-	width: 100%;
-	padding-top: 100%;
+	/*width: 100%;*/
+	/*padding-top: 100%;*/
 	border-radius: 50%;
 	border: 1px solid black;
 	background-color: #c2c2c2;
 	margin: 0px;
 }
-
 .row p {
 	padding-top: 15px;
 	font-size: 18px;
@@ -42,4 +41,11 @@ textarea {
 
 .myFeedback {
 	margin-bottom: 50px;
+}
+.myImages {
+    border-radius: 50%;
+    margin: 0px;
+    width: 100%;
+    margin: 0px;
+    border: 2px solid black;
 }

@@ -44,7 +44,7 @@
 	padding: 8px;
 	border: 1px solid #A4A4A4;
 }
-.mySideMenuLogin input[type="email"], .mySideMenuLogin input[type="password"] {
+.mySideMenuLogin input[type="email"], .mySideMenuLogin input[type="password"], .mySideMenuLogin input[type="text"] {
 	width: 80%;
 }
 

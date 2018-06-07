@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from datetime import datetime, timedelta
+from django.contrib.auth import authenticate, login, logout
+
 
 # Create your views here.
 
@@ -75,9 +77,13 @@ def statistic(request):
 
 
 def shithappens(request):
+	loginform = forms.LoginForm()
+	return shithappenswithform(request, loginform)
+
+def shithappenswithform(request, loginform):
 	stories = Story.objects.all().order_by('like_count').reverse()
 	print(stories)
-	return render(request, "ShitHappens.html", context={ "stories": stories })
+	return render(request, "ShitHappens.html", context={ "stories": stories, "loginform":loginform })
 
 
 @login_required
@@ -114,3 +120,22 @@ def mystories(request):
 
 	stories = Story.objects.filter(user_id_id=request.user.id)
 	return render(request, "MyStories.html", context={ "stories": stories, "form_create_story": form_create_story} );
+
+
+def loginview(request):
+	loginform = forms.LoginForm(request.POST)
+	if loginform.is_valid():
+		username = loginform.cleaned_data['username']
+		passwd = loginform.cleaned_data['passwd']
+		user = authenticate(request, username=username, password=passwd)
+		if user is not None:
+			login(request, user)
+		else:
+			loginform.add_error("__all__", "Неправильный логин, имейл или пароль")
+			return shithappenswithform(request, loginform)
+	return  redirect('home-page')
+
+
+def logoutview(request):
+	logout(request)
+	return  redirect('home-page')

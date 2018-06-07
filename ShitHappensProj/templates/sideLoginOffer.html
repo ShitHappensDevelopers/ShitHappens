@@ -1,13 +1,18 @@
+{% load customtemplatetags %}
 <div class="mySideMenuLogin">
-	<form action="", role="form">
+	<form method="post", action="{% url 'loginurl' %}", role="form">
+			{% csrf_token %}
 		<div class="form-group">
-			<input type="email" class="form-control" name="login" placeholder="Введите логин">
+				{{loginform.username|addcss:"form-control"}}
+			<!-- <input type="email" class="form-control" name="login" placeholder="Введите логин"> -->
 			<!-- <label for="pass" class="text-danger">Error</label> -->
 		</div>
 		<div class="form-group">
-			<input type="password" class="form-control" name="email" placeholder="Введите пароль">
+				{{loginform.passwd|addcss:"form-control"}}
+			<!-- <input type="password" class="form-control" name="email" placeholder="Введите пароль"> -->
 			<!-- <label for="pass" class="text-danger">Error</label> -->
 		</div>
+		<div>{{loginform.non_field_errors}}</div>
 		<input type="submit" name="" class="btn btn-primary" value="Вход">
 		<a href="#">Забыли пароль?</a>
 	</form>
