@@ -56,3 +56,10 @@ class MyProfileChangePasswdForm(forms.Form):
             raise forms.ValidationError("Пароли не совпадают")
 
         return cleaned_data
+
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(help_text="Enter username or email", label="Логин", widget=forms.TextInput(attrs={'placeholder': 'Введите логин'}))
+    passwd = forms.CharField(help_text="Enter password", label="Пароль", widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль'}))
+
