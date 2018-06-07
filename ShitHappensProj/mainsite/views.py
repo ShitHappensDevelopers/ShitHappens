@@ -5,6 +5,7 @@ from . import models
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from datetime import datetime, timedelta
 
 # Create your views here.
 
@@ -90,5 +91,26 @@ def main(request):
 
 @login_required
 def mystories(request):
+	form_create_story = None
+	if (request.method == "POST"):
+		form_create_story = forms.CreateNewStory(request.POST)
+
+		if (form_create_story.is_valid()):
+			content = form_create_story.cleaned_data["story_content"]
+			days_num = form_create_story.cleaned_data["days_num"]
+			hours_num = form_create_story.cleaned_data["hours_num"]
+			minutes_num = form_create_story.cleaned_data["minutes_num"]
+
+			exp_date = None
+			if (days_num != 0 and hours_num != 0 and minutes_num != 0):
+				exp_date = datetime.now()+timedelta(days=days_num, hours=hours_num, minutes=minutes_num)
+
+			story_obj = Story(user_id_id=request.user.id, story_content=content, create_date=datetime.now(), 
+				expire_date=exp_date, like_count=0, dislike_count=0, is_active=1)
+
+			story_obj.save()
+	else:
+		form_create_story = forms.CreateNewStory()
+
 	stories = Story.objects.filter(user_id_id=request.user.id)
-	return render(request, "MyStories.html", context={ "stories": stories });
+	return render(request, "MyStories.html", context={ "stories": stories, "form_create_story": form_create_story} );

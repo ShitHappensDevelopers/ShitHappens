@@ -56,3 +56,15 @@ class MyProfileChangePasswdForm(forms.Form):
             raise forms.ValidationError("Пароли не совпадают")
 
         return cleaned_data
+
+
+class CreateNewStory(forms.Form):
+    story_content = forms.CharField(widget=forms.Textarea)
+    days_num = forms.IntegerField(widget=forms.NumberInput(), min_value=0, required=False, initial=0)
+    hours_num = forms.IntegerField(widget=forms.NumberInput(), min_value=0, max_value=23, required=False, initial=0)
+    minutes_num = forms.IntegerField(widget=forms.NumberInput(), min_value=0, max_value=59, required=False, initial=0)
+
+    story_content.widget.attrs.update({'id':'myWriteStoryTxtAr'})
+    days_num.widget.attrs.update({'class':'myInputNumber'})
+    hours_num.widget.attrs.update({'class':'myInputNumber'})
+    minutes_num.widget.attrs.update({'class':'myInputNumber'})

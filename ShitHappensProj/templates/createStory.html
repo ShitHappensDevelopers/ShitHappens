@@ -9,18 +9,19 @@
 			</div>
 		</div>
 
-		<div id="el1" class="panel-collapse collapse">			
+		<div id="el1" class="panel-collapse collapse">
 			<div class="panel-body">
-				<form action="" role="form">
+				<form action="{% url 'createStory' %}" role="form" method="post">
+					{% csrf_token %}
 
-					<textarea name="story" id="myWriteStoryTxtAr" placeholder="Поделитесь своей историей..." scrolling="no" autofocus required></textarea>
+					{{ form_create_story.story_content }}
 
 					<div class="myCheckbox">
 						<input type="checkbox" id="myStoryLife"> <label for="myStoryLife" id="myStoryLifeLbl">Задать время жизни истории</label>	
 						<div id="mySetStoryLife">
-							<input type="number" class="myInputNumber" name="Days" min="0" step="1" title="You can use only numbers here"> дней &ensp;
-							<input type="number" class="myInputNumber" name="Hours" min="0" max="24" step="1" title="You can use only numbers here"> часов &ensp;
-							<input type="number" class="myInputNumber" name="Minutes" min="0" max="60" step="1" title="You can use only numbers here"> минут
+							{{ form_create_story.days_num }} дней &ensp;
+							{{ form_create_story.hours_num }} часов &ensp;
+							{{ form_create_story.minutes_num }} минут
 						</div>
 					</div>
 
