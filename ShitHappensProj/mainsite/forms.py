@@ -74,6 +74,17 @@ class LoginForm(forms.Form):
     username = forms.CharField(help_text="Enter username or email", label="Логин", widget=forms.TextInput(attrs={'placeholder': 'Введите логин'}))
     passwd = forms.CharField(help_text="Enter password", label="Пароль", widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль'}))
 
+
+class FiltersForm(forms.Form):
+    sort_by = forms.ChoiceField(choices=[('create_date','Дате'), ('like_count','Популярности')], widget=forms.RadioSelect())
+    expire_time = forms.IntegerField(widget=forms.NumberInput(), min_value=0, required=False, initial=0)
+    last_time = forms.IntegerField(widget=forms.NumberInput(), min_value=0, required=False, initial=0)
+    user_login = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'логин'}), required=False, initial="")
+
+    expire_time.widget.attrs.update({'class':'myInputNumber'})
+    last_time.widget.attrs.update({'class':'myInputNumber'})
+
+
 class RegisterNewUserForm(forms.Form):
     username = forms.CharField(help_text="Enter username or email", label="Логин", widget=forms.TextInput(attrs={'placeholder': 'Введите логин'}))
     email = forms.EmailField(help_text="Enter new email", label="Эмейл", error_messages={'invalid': 'Такой имейл неподходит'}, widget=forms.EmailInput(attrs={'placeholder': 'Введите эмейл'}))
@@ -109,3 +120,4 @@ class RegisterNewUserForm(forms.Form):
         if(pwd1 != pwd2):
             raise forms.ValidationError("Пароли не совпадают")
         return cleaned_data
+
