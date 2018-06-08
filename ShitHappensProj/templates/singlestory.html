@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Все истории {% endblock title %}
+
+
+{% block content %}
+	<div>
+		<div class="myContainer">
+			<div class="myContent">
+				<div class="col-xs-2 text-justify">
+				</div>
+				<div class="col-xs-8 myCreateStory-Filters">
+					<div class="col-xs-12 myWall">
+						<div>
+
+								{% include "storyTemplate.html" %}
+
+						</div>
+					</div>
+                </div>
+                <div class="col-xs-2 text-justify">
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -16,6 +17,8 @@ class Story(models.Model):
         String for representing the Story object
         """
         return self.story_content[0:20]
+    def get_absolute_url(self):
+        return reverse('singlestoryurl', args=[str(self.id)])
 
 class Users_LikeStories(models.Model):
     user_id = models.ForeignKey(User, null=False, on_delete=models.CASCADE)

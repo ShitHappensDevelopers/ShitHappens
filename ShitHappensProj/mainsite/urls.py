@@ -9,8 +9,8 @@ urlpatterns = [
 	path('myprofile/<acttype>', views.myprofile, name='myprofilepattern-action'),
 	path('myprofile', views.myprofile, name='myprofilepattern' ),
 	#path('base', views.about),
-	path('AboutUs', views.about),
-	path('Stat', views.statistic),
+	path('AboutUs', views.about, name='aboutusurl'),
+	path('Stat', views.statistic, name='staturl'),
 	path('ShitHappens', views.shithappens, name='home-page'),
 	path('MyStat', views.mystatistic),
 	path('Main', views.main),
@@ -18,4 +18,6 @@ urlpatterns = [
 	path('login', views.loginview, name='loginurl'),
 	path('logout', views.logoutview, name='logouturl'),
 	path('register', views.registernewuserview, name='registernewuserurl'),
+	path('singlestory/<int:storyid>', views.singlestory, name='singlestoryurl'),
+	path('randomstory', views.randomstory, name='randomstoryurl'),
 ]

@@ -38,3 +38,13 @@ $('#myWriteStoryTxtAr').on("input", function() {
 	this.style.height = this.scrollHeight + 'px';
 	// this.style.height = this.scrollHeight + (textArea.outerHeight() - textArea.height()) / 2 + 'px';
 });
+
+
+var copybuttns = document.querySelectorAll(".mycopylinkbut");
+Array.prototype.forEach.call(copybuttns, function(copybuttn) {
+    var element= copybuttn.parentNode.parentNode.querySelector(".myidlink");
+            addListener(copybuttn,"click", function() {
+              element.select();
+              document.execCommand('copy');
+            });
+});

@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from datetime import datetime, timedelta
 from django.contrib.auth import authenticate, login, logout
+from random import randint
 
 
 # Create your views here.
@@ -154,3 +155,16 @@ def registernewuserview(request):
 	else:
 		registernewuserform = forms.RegisterNewUserForm()
 	return render(request, "forms.html", context={ "registernewuserform": registernewuserform})
+
+
+def singlestory(request,storyid):
+	story = Story.objects.get(pk=storyid)
+	if not story == None:
+		redirect('home-page')
+	return render(request, "singlestory.html", context={ "story": story})
+
+def randomstory(request):
+	numberofstories = Story.objects.all().count()
+	storynum = randint(0,numberofstories-1)
+	story = Story.objects.all().order_by("pk")[storynum]
+	return redirect(story.get_absolute_url())

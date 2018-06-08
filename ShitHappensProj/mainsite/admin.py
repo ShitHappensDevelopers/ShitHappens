@@ -13,6 +13,6 @@ admin.site.register(Users_DisLikeStories)
 
 @admin.register(Story)
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ('user_id', 'create_date', 'expire_date')
+    list_display = ('pk','user_id', 'create_date', 'expire_date')
     # inlines = [StoryInline]
 
