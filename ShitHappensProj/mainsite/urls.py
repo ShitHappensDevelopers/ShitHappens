@@ -17,4 +17,5 @@ urlpatterns = [
 	path('MyStories', views.mystories, name='createStory'),
 	path('login', views.loginview, name='loginurl'),
 	path('logout', views.logoutview, name='logouturl'),
+	path('register', views.registernewuserview, name='registernewuserurl'),
 ]

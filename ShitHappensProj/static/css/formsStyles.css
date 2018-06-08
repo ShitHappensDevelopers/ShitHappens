@@ -33,7 +33,7 @@ body {
 	text-align: center;
 }
 .myRegForm .form-group > label {
-	visibility: hidden;
+	/* visibility: hidden; */
 	height: 0;
 }
 

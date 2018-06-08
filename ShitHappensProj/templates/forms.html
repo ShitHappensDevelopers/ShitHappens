@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Регистрация {% endblock title %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/formsStyles.css' %}">
+{% endblock links %}
+{% block content %}
+
+{% load customtemplatetags %}
+<div class="text-center myRegFormContainer">
+	<h3>Регистрация</h3>
+	<div class="text-left myRegForm">
+		<form method="post", action="{% url 'registernewuserurl' %}" role="form">
+				{% csrf_token %}
+			<div class="form-group">
+				{{registernewuserform.username|addcss:"form-control"}}
+				<!-- <input type="text" class="form-control" name="login" placeholder="Ваш логин"> -->
+				<label for="pass" class="text-danger">{{registernewuserform.username.errors}}</label>
+			</div>
+			<div class="form-group">
+				{{registernewuserform.email|addcss:"form-control"}}
+				<!-- <input type="email" class="form-control" name="email" placeholder="Ваш емейл"> -->
+				<label for="pass" class="text-danger">{{registernewuserform.email.errors}}</label>
+			</div>
+			<div class="form-group">
+				{{registernewuserform.passwd1|addcss:"form-control"}}
+				<!-- <input type="password" class="form-control" name="login" placeholder="Ваш пароль" id="pass"> -->
+				<label for="pass" class="text-danger">{{registernewuserform.passwd1.errors}}</label>
+			</div>
+			<div class="form-group">
+				{{registernewuserform.passwd2|addcss:"form-control"}}
+				<!-- <input type="password" class="form-control" name="login" placeholder="Повторите пароль"> -->
+				<label for="pass" class="text-danger">{{registernewuserform.passwd2.errors}}</label>
+			</div>
+			<label for="pass" class="text-danger">{{registernewuserform.non_field_errors}}</label>
+			<button type="submit" class="form-control btn btn-success">Зарегестрироваться</button>
+
+		</form>
+
+		<p>Уже есть аккаунт? <a href="#">Войти</a></p>
+
+		<div class="text-center mySeparator">
+			<span>ИЛИ</span>
+		</div>
+
+		<div class="mySignUpWith">
+			<div>
+				<button class="btn myFacebookBtn">Войти с помощью Facebook</button>
+			</div>
+			<div>
+				<button class="btn myGoogleBtn">Войти с помощью Google</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+{% endblock content %}
+
