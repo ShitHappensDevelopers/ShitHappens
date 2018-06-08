@@ -94,10 +94,10 @@ def shithappenswithform(request, loginform):
 			last_time = filters_form.cleaned_data["last_time"]
 			user_login = filters_form.cleaned_data["user_login"]
 
-			stories = Story.objects.all().order_by(sort_by)
+			stories = Story.objects.all().order_by(sort_by).reverse()
 
-			if sort_by == 'like_count':
-				stories = stories.reverse()
+			# if sort_by == 'like_count':
+			# 	stories = stories.reverse()
 
 			if expire_time != 0 and expire_time != None:
 				exp_date = datetime.now()+timedelta(hours=expire_time)

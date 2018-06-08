@@ -19,6 +19,15 @@ header > div, nav > div {
 	margin: auto;
 }
 
+.myGreeting {
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px 0 0
+}
+.myLogo {
+	color: black;
+}
+
 .myIconsContainer{
 	text-align: left;
 	margin-top: 10px;
